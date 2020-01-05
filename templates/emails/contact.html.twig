@@ -1,0 +1,23 @@
+<table class="table table-dark">
+    <thead>
+    <tr>
+        <th scope="col">Annonce</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Email</th>
+        <th scope="col">telephone</th>
+        <th scope="col">Message</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td><a>{{ url('property_show',{'slug': property.slug, 'id': property.id }) }}</a>{{ contact.property.title }}</td>#}
+        <td>{{ contact.firstname }}</td>
+        <td>{{ contact.lastname }}</td>
+        <td>{{ contact.email }}</td>
+        <td>{{ contact.phone }}</td>
+        <td>{{ contact.message }}</td>
+    </tr>
+    </tbody>
+</table>

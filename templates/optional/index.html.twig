@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Optional index{% endblock %}
+
+{% block body %}
+    <h1>Index des options</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for optional in optionals %}
+            <tr>
+                <td>{{ optional.id }}</td>
+                <td>{{ optional.name }}</td>
+                <td>
+                    <a href="{{ path('optional_show', {'id': optional.id}) }}">show</a>
+                    <a href="{{ path('optional_edit', {'id': optional.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('optional_new') }}">Create new</a>
+{% endblock %}
+
+

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="jumbotron text-center">
+<h1>Souksouvanh Immo</h1>
+        <h2>Bienvenue dans l'agence immobillière de Mr Souksouvanh</h2>
+    </div>
+    <div class="container">
+        <h3>Les derniers biens </h3>
+        <div class="row flex">
+            {% for property in properties %}
+                <div class="col-3">
+                    <div class="card border-dark">
+                            <div class="card-title">
+                                   <a href="{{ path('property_show',{'id': property.id, 'slug': property.slug}) }}" class="text m-2">{{ property.title}}</a>
+                                <p class="card-text m-3">{{  property.city }} {{ property.postalCode }}</p>
+                                <div class="text-dark m-3"><h3>{{ property.formattedPrice }} €</h3></div>
+                            </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
